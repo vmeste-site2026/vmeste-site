@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вместе — общение и новые знакомства</title>
+  <meta name="description" content="Вместе — место для общения, новых друзей и интересных знакомств.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Вместе — общение и новые знакомства">
+  <meta property="og:description" content="Общайся, находи людей по интересам и создавай свой профиль.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="/">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="logo" href="#home" aria-label="Вместе">❤️ Вместе</a>
+  <nav>
+    <a href="#home">Главная</a>
+    <a href="#people">Люди</a>
+    <a href="#messages">Сообщения</a>
+    <button class="btn small" id="loginBtn">Войти</button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <span class="eyebrow">Общение рядом</span>
+      <h1>Найди людей,<br><span>с которыми интересно</span></h1>
+      <p>Создай профиль, расскажи о своих интересах и общайся с людьми.</p>
+      <div class="actions">
+        <button class="btn" id="registerBtn">Создать аккаунт ❤️</button>
+        <a class="btn ghost" href="#people">Посмотреть людей</a>
+      </div>
+      <div class="stats">
+        <div><strong id="onlineCount">—</strong><span>сейчас на сайте</span></div>
+        <div><strong id="profileCount">—</strong><span>профилей</span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="heart">❤️</div>
+      <div class="bubble b1">Привет! 👋</div>
+      <div class="bubble b2">Давай общаться 💬</div>
+    </div>
+  </section>
+
+  <section class="section" id="people">
+    <div class="section-head">
+      <div><span class="eyebrow">Знакомства</span><h2>Люди</h2></div>
+      <input id="searchInput" class="search" placeholder="Поиск по имени или интересам">
+    </div>
+    <div id="peopleGrid" class="people-grid"></div>
+  </section>
+
+  <section class="section messages-section" id="messages">
+    <div class="section-head">
+      <div><span class="eyebrow">Общение</span><h2>Сообщения</h2></div>
+    </div>
+    <div id="messagesBox" class="messages-box">
+      <div class="empty">Войди в аккаунт, чтобы отправлять и получать сообщения.</div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature"><div>👤</div><h3>Профиль</h3><p>Добавляй имя, город и интересы.</p></div>
+    <div class="feature"><div>🔎</div><h3>Поиск</h3><p>Находи людей по имени и интересам.</p></div>
+    <div class="feature"><div>💬</div><h3>Сообщения</h3><p>Общайся внутри сайта.</p></div>
+  </section>
+</main>
+
+<footer>© 2026 «Вместе» ❤️</footer>
+
+<div class="modal hidden" id="authModal">
+  <div class="modal-card">
+    <button class="close" id="closeModal">×</button>
+    <div id="authContent"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- Подключение Supabase: после создания проекта вставь свои значения в app.js -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+</body>
+</html>
